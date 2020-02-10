@@ -1,0 +1,35 @@
+@import '~vue-material/dist/vue-material.min.css';
+@import '~vue-material/dist/theme/default.css';
+
+body {
+    background-color: white;
+}
+
+.bottom-menu {
+    width: 99%;
+    text-align: left;
+    a {
+        padding-left: 0.5em;
+    }
+}
+
+.static-top {
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    position: absolute;
+}
+
+@media (min-width: 640px) {
+    .bottom-menu {
+        position: fixed;
+        padding-bottom: 0.5em;
+        text-align: right;
+        left: 0.5%;
+        bottom: 1em;
+        a {
+            padding-left: 0em;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Subscribe{% endblock %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="data-categories" content="{{ categories|join(',') }}">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <div id="app">
+            <div class="page-container">
+                <md-app>
+                    <md-app-toolbar class="md-primary">
+                        <span class="md-title" v-text="$route.meta.title"></span>
+                    </md-app-toolbar>
+
+                    <md-app-content>
+                        <router-view></router-view>
+                    </md-app-content>
+
+                </md-app>
+                <div class="bottom-menu">
+                    <md-divider></md-divider>
+                    <router-link to="/admin">Admin</router-link>
+                </div>
+                <div class="static-top">
+                    <md-progress-bar md-mode="indeterminate" v-if="$store.state.isLoading" class="md-accent"></md-progress-bar>
+                </div>
+            </div>
+        </div>
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>
